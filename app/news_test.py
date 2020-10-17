@@ -12,7 +12,7 @@ class NewsTest(unittest.TestCase):
         '''
         This method runs before every test
         '''
-        self.news1 = News("New York Times", "Trump is a genius", "I don't have DNA, I have USA", "https://trump.com", "https://trump.com", "12th October 2020" )
+        self.news1 = News("New York Times", "Trump is a genius", "I don't have DNA, I have USA", "12th October 2020" )
 
     def test_instance(self):
         self.assertTrue(isinstance(self.news1,News))
