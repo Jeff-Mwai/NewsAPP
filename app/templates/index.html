@@ -11,13 +11,49 @@
 <body>
 
            <!--Popular Articles--> 
-        <h3> Popular Articles</h3>
+        <h3> Entertainment News</h3>
          <ul>
-            {% for popular_articles in articles %}
-                <li>{{ popular_articles.title}}</li>
+            {% for entertainment_news in entertainment %}
+                <li>{{ entertainment_news.name}}</li>
+                <li>{{entertainment_news.description}}</li>
+                <a><li>entertainment_news.url</li></a>
             {% endfor %}
         </ul>
 
+         <h3> Health News</h3>
+         <ul>
+            {% for health_news in health %}
+                <li>{{ health_news.name}}</li>
+                <li>{{health_news.description}}</li>
+                <a href = "{{health_news.url}}"></a>
+            {% endfor %}
+        </ul>
+
+         <h3> Technology News</h3>
+         <ul>
+            {% for technology_news in sports %}
+                <li>{{ technology_news.name}}</li>
+                <li>{{technology_news.description}}</li>
+                <a href = "{{technology_news.url}}"></a>
+            {% endfor %}
+        </ul>
+
+         <h3>  Science News</h3>
+         <ul>
+            {% for science_news in entertainment %}
+                <li>{{ science_news.name}}</li>
+                <li>{{science_news.description}}</li>
+                <a href ="{{science_news.url}}"></a>
+            {% endfor %}
+        </ul>
+
+         <h3> Business News</h3>
+         <ul>
+            {% for business_news in entertainment %}
+                <li><a href = "{{business_news.url}}">{{ business_news.name}}</a></li>
+                <li>{{business_news.description}}</li>
+            {% endfor %}
+        </ul>
     
 </body>
 </html>

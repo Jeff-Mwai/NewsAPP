@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .request import get_news
+from .request import get_news_category
 
 
 # Views
@@ -12,11 +12,15 @@ def index():
     '''
 
     #method to get the news
-    popular_articles = get_news('articles')
-    print(popular_articles)
+    entertainment_news = get_news_category('entertainment')
+    business_news = get_news_category('business')
+    health_news = get_news_category('health')
+    science_news = get_news_category('science')
+    technology_news = get_news_category('technology')
+
 
     title = 'Home, welcome to my News app, created by your\'s truly'
-    return render_template('index.html', title = title, articles = popular_articles)
+    return render_template('index.html', title = title, entertainment = entertainment_news, business = business_news, health = health_news, science = science_news, technology = technology_news)
 
 
 @app.route('/news/<int:news_id>')
