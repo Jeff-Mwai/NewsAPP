@@ -9,7 +9,7 @@
 {% endmacro %} -->
 
 
-{% macro displayNewsList(news_list) %}
+<!-- {% macro displayNewsList(news_list) %}
 {% for news in news_list %}
 <div class="card" style="width: 30rem;">
     <h5 class="card-title">{{ news.name}}</h5>
@@ -20,3 +20,31 @@
 </div>
 {% endfor %}
 {% endmacro %}
+
+{% macro displayNewsList(news_list) %} -->
+
+
+<div class="jumbotron hjumbo">
+        <div class="overlay">
+            <h1 class="text-dark txt text-center text-bold">{{source}} NEWS APP</h1>
+        </div>
+    </div>
+    {% for news in news_list %}
+
+    <div class="card-columns">
+        
+        <div class="card">
+            <div class="card-body">
+                <h5><strong>{{news.name}}</strong></h5>
+
+            </div>
+
+            <div class="card-body">
+                <p>{{news.description}}</p>
+                <a href="/sources/{{news.id}}">Read Article</a>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+    {% endmacro %}
