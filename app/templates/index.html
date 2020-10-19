@@ -1,9 +1,18 @@
 {% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 
+<!-- Styles block -->
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/articles.css')}}">
+{% endblock %}
+<!-- Content block -->
+
 
 <!-- Content block -->
 {% block content %}
+<div class="landing">
 <h3> Entertainment News</h3>
 <ul>
     {{ macro.displayNewsList(entertainment)}}
@@ -28,6 +37,8 @@
 <ul>
     {{ macro.displayNewsList(science)}}
 </ul>
+
+</div>
 
 
 
