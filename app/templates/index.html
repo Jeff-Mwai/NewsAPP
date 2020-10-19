@@ -1,6 +1,38 @@
+{% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 
-<!DOCTYPE html>
+
+<!-- Content block -->
+{% block content %}
+<h3> Entertainment News</h3>
+<ul>
+    {{ macro.displayNewsList(entertainment)}}
+</ul>
+
+<h3> Business News </h3>
+<ul>
+    {{ macro.displayNewsList(business)}}
+</ul>
+
+<h3>Health News</h3>
+<ul>
+    {{ macro.displayNewsList(health)}}
+</ul>
+
+<h3>Technology News</h3>
+<ul>
+    {{ macro.displayNewsList(technology)}}
+</ul>
+
+<h3>Science News</h3>
+<ul>
+    {{ macro.displayNewsList(science)}}
+</ul>
+
+
+
+{% endblock%}
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,14 +68,14 @@
            <h3>Science News</h3>
         <ul>
             {{ macro.displayNewsList(science)}}
-        </ul>
+        </ul> -->
 
 
 
 
 
 
-           <!-- Popular Articles 
+<!-- Popular Articles 
         <h3> Entertainment News</h3>
          <ul>
             {% for entertainment_news in entertainment %}
@@ -87,6 +119,6 @@
                 <li>{{business_news.description}}</li>
             {% endfor %}
         </ul> -->
-    
-</body>
-</html>
+
+<!-- </body>
+</html> -->
