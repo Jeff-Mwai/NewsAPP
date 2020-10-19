@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/articles.css')}}">
+</head>
+
+<body>
+
+    <!-- {% for item in myNews %}
+    <img src="{{item.urlToImage}}" width="200px" alt="{{item.title}}">
+    {% endfor %} -->
+
+    <h2>Articles</h2>
+
+    <div class="my_articles">
+      
+            {% for item in myNews %}
+            <div class="card card-cascade wider">
+
+                <div class="view view-cascade overlay">
+                    <img src="{{item.urlToImage}}" width="400px" alt="{{item.title}}">
+                    <a href="#!">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+
+                <div class="card-body card-body-cascade text-center">
+
+                    <h4 class="card-title"><strong>{{item.title}}</strong></h4>
+
+                    <h6 class="blue-text pb-2"><strong>{{item.author}}</strong></h6>
+
+                    <p class="card-text">{{item.description}}</p>
+
+                </div>
+
+            </div>
+
+
+      
+
+
+    </div>
+    {% endfor %}
+
+     <!-- <div class="jumbotron hjumbo">
+        <div class="overlay">
+            <h1 class="text-white txt">{{source}} Articles</h1>
+        </div>
+    </div>
+
+     <div class="card-columns">
+        {% for item in myNews %}
+        <div class="card">
+            <img src="{{item.urlToImage}}" width="500px" alt="" class="card-img-top">
+            <div class="card-body">
+                <p>{{item.description}}</p>
+                <p><br>{{ item.author}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div> -->
+
+</body>
+
+</html>
