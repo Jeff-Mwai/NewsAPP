@@ -12,37 +12,31 @@
 
 <!-- Content block -->
 {% block content %}
-<div class="landing">
-    <h2> Entertainment News</h2>
-    <ul>
-        {{ macro.displayNewsList(entertainment)}}
-    </ul>
-
-    <h2> Business News </h2>
-    <ul>
-        {{ macro.displayNewsList(business)}}
-    </ul>
-
-    <h2>Health News</h2>
-    <ul>
-        {{ macro.displayNewsList(health)}}
-    </ul>
-
-    <hh2>Technology News</h2>
-        <ul>
-            {{ macro.displayNewsList(technology)}}
-        </ul>
-
-        <h2>Science News</h2>
-        <ul>
-            {{ macro.displayNewsList(science)}}
-        </ul>
-
-</div>
-
-
-
+<h2> Entertainment News</h2>
+    <div class="display">
+    {{ macro.displayNewsList(entertainment)}}
+    </div>
+    <h2> Business News</h2>
+    <div class="display">
+    {{ macro.displayNewsList(business)}}
+    </div>
+    <h2> Health News</h2>
+    <div class="display">
+    {{ macro.displayNewsList(health)}}
+    </div>
+    <h2> Technology News</h2>
+    <div class="display">
+    {{ macro.displayNewsList(technology)}}
+    </div>
+    <h2> Science News</h2>
+    <div class="display">
+    {{ macro.displayNewsList(science)}}
+    </div>
 {% endblock%}
+
+
+
+
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
