@@ -4,8 +4,8 @@
 <!-- Styles block -->
 
 {% block styles %}
-    {{ super() }}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/articles.css')}}">
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/articles.css')}}">
 {% endblock %}
 <!-- Content block -->
 
@@ -13,30 +13,30 @@
 <!-- Content block -->
 {% block content %}
 <div class="landing">
-<h3> Entertainment News</h3>
-<ul>
-    {{ macro.displayNewsList(entertainment)}}
-</ul>
+    <h2> Entertainment News</h2>
+    <ul>
+        {{ macro.displayNewsList(entertainment)}}
+    </ul>
 
-<h3> Business News </h3>
-<ul>
-    {{ macro.displayNewsList(business)}}
-</ul>
+    <h2> Business News </h2>
+    <ul>
+        {{ macro.displayNewsList(business)}}
+    </ul>
 
-<h3>Health News</h3>
-<ul>
-    {{ macro.displayNewsList(health)}}
-</ul>
+    <h2>Health News</h2>
+    <ul>
+        {{ macro.displayNewsList(health)}}
+    </ul>
 
-<h3>Technology News</h3>
-<ul>
-    {{ macro.displayNewsList(technology)}}
-</ul>
+    <hh2>Technology News</h2>
+        <ul>
+            {{ macro.displayNewsList(technology)}}
+        </ul>
 
-<h3>Science News</h3>
-<ul>
-    {{ macro.displayNewsList(science)}}
-</ul>
+        <h2>Science News</h2>
+        <ul>
+            {{ macro.displayNewsList(science)}}
+        </ul>
 
 </div>
 

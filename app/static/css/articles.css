@@ -1,7 +1,12 @@
 .landing {
     display: flexbox;
     justify-content: space-between;
-    background-color: rgb(2, 2, 37);
-    color: white;
-    margin-top: -15px;
+    margin-top: -10px;
+}
+.landing h2 {
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: navy;
 }
