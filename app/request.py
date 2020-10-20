@@ -1,17 +1,18 @@
-from app import app 
+# from app import app 
 import urllib.request,json
 from .models import news
+import os
 
 
 News = news.News
 Sources = news.Sources
 #instance to get the API key
 
-api_key = app.config['NEWS_API_KEY']
+api_key = os.environ.get('NEWS_API_KEY')
 
 #instance to get the base url
-base_url = app.config['NEWS_API_BASE_URL']
-article_url = app.config['ARTICLE_API_BASE_URL']
+base_url = os.environ.get('NEWS_API_BASE_URL')
+article_url = os.environ.get('ARTICLE_API_BASE_URL')
 
 def get_news(category):
 

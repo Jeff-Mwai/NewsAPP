@@ -1,10 +1,11 @@
 from flask import render_template
-from app import app
-from .request import get_news_category, get_news
+# from app import app
+from . import main
+from ..request import get_news_category, get_news
 
 
 # Views
-@app.route('/')
+@main.route('/')
 def index():
 
     '''
@@ -23,7 +24,7 @@ def index():
     return render_template('index.html', title = title, entertainment = entertainment_news, business = business_news, health = health_news, science = science_news, technology = technology_news)
 
 
-@app.route('/sources/<id>')
+@main.route('/sources/<id>')
 def articles(id):
 
     my_news = get_news(id)
@@ -31,7 +32,7 @@ def articles(id):
     return render_template('articles.html', myNews = my_news, title = title)
 
 
-@app.route('/news/<int:news_id>')
+@main.route('/news/<int:news_id>')
 def news(news_id):
     '''
     It views the page of the news and returns the details of the news and the data
