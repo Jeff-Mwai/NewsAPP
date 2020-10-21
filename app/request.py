@@ -8,36 +8,23 @@ News = news.News
 Sources = news.Sources
 #instance to get the API key
 
-api_key = os.environ.get('NEWS_API_KEY')
+apiKey = None
 
 #instance to get the base url
-base_url = os.environ.get('NEWS_API_BASE_URL')
-article_url = os.environ.get('ARTICLE_API_BASE_URL')
+base_url = None
+article_url = None
 
-def get_news(category):
 
-    '''
-    This function gets the json response to my url request
-    '''
+def configure_request(app):
+    global apiKey, base_url, article_url
+    apiKey = app.config['NEWS_API_KEY']
+    base_url = app.config['NEWS_API_BASE_URL']
+    article_url = app.config['ARTICLE_API_BASE_URL']
 
-    get_news_url = article_url.format(category, api_key)
-
-    with urllib.request.urlopen(get_news_url) as url:
-        get_news_data = url.read()
-        get_news_response = json.loads(get_news_data)
-        # import pdb; pdb.set_trace()
-
-        news_results = None
-
-        if get_news_response['articles']:
-            news_results_list = get_news_response['articles']
-            news_results = process_article_results(news_results_list)
-
-    return news_results
 
 def get_news_category(category):
     
-    get_news_url = base_url.format(category, api_key)
+    get_news_url = base_url.format(category, apiKey)
 
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
@@ -50,7 +37,6 @@ def get_news_category(category):
             news_results = process_results(news_results_list)
 
     return news_results
-
 
 
 
@@ -80,6 +66,30 @@ def process_results(news_list):
         news_results.append(source_object)
 
     return news_results
+
+
+def get_news(category):
+
+    '''
+    This function gets the json response to my url request
+    '''
+
+    get_news_url = article_url.format(category, apiKey)
+
+    with urllib.request.urlopen(get_news_url) as url:
+        get_news_data = url.read()
+        get_news_response = json.loads(get_news_data)
+        # import pdb; pdb.set_trace()
+
+        news_results = None
+
+        if get_news_response['articles']:
+            news_results_list = get_news_response['articles']
+            news_results = process_article_results(news_results_list)
+
+    return news_results
+
+
 
 def process_article_results(article_list):
 
